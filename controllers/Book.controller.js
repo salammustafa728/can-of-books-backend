@@ -6,7 +6,7 @@ const {userModel} = require('../models/user.model');
 const getBooks = (req , res) => {
     const {email}= req.query;
     console.log( req.query);
-    userModel.find({email:email}, (error, user) => {
+    userModel.findOne({email:email}, (error, user) => {
         console.log(user)
         if (error){
             res.send(error)

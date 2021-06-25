@@ -7,7 +7,7 @@ app.use(cors())
 app.use(express.json());
 require('dotenv').config();
 const PORT = process.env.PORT;
-// const {seedUserData} = require('./models/user.model');
+const {seedUserData} = require('./models/user.model');
 
 const {getBooks,createBook,updateBook,deleteBook } = require('./controllers/Book.controller');
 
@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URL,
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
-// seedUserData();
+seedUserData();
 app.get('/',(x,y)=>{
     y.send('work');
 });
