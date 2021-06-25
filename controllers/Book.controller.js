@@ -49,7 +49,7 @@ const updateBook = (request,responce)=>{
 }
 const deleteBook =(req,res)=>{
     const bookIndex= req.params.book_idx;
-    const { email} = req.body;
+    const { email} = req.query;
     userModel.findOne({ email: email }, (error, userData) => {
      if (error) {
          res.send(error);     }
